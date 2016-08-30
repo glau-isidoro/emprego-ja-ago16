@@ -1,9 +1,5 @@
-<%= @jobs.each do |job| %>
-<h1><%= "#{job.title}" %></h1>
-<h1><%= "#{job.title}" %></h1>
-<h1><%= "#{job.description}" %></h1>
+<% @jobs.each do |job| %>
+<h1><%= job.title %></h1>
+<%= job.company %>
+<%= job.location %>
 <% end %>
-<h1>Vaga de Dev</h1>
-</br>
-Campus Code
-São Paulo
