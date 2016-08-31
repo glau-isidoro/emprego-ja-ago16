@@ -5,8 +5,8 @@
     <%= f.text_field :title %>
   </div>
   <div>
-    <%= f.label :company, "Empresa" %>
-    <%= f.select_tag :company %>
+    <%= f.label :company_id, "Empresa" %>
+    <%= f.collection_select(:company_id, @companies, :id, :name) %>
   </div>
   <div>
     <%= f.label :location, "Localização" %>

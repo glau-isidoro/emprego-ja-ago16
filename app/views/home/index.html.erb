@@ -2,7 +2,7 @@
 <dl>
   <dt><h1><%= link_to job.title, job %></h1></dt>
   <dt>Empresa:</dt>
-  <dd><%= job.company %></dd>
+  <dd><%= job.company.name %></dd>
   <dt>Localização:</dt>
   <dd><%= job.location %></dd>
   <% if job.featured? %>
