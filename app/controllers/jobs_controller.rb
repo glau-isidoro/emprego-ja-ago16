@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
 
   def show
-    @job = Job.find(params[:id])
+    set_job
   end
 
   def new
@@ -20,8 +20,23 @@ class JobsController < ApplicationController
     end
   end
 
+  def edit
+    set_job
+    get_companies
+  end
+
+  def update
+    set_job
+    @job.update(job_parameters)
+    redirect_to @job
+  end
+
 
   private
+
+  def set_job
+    @job = Job.find(params[:id])
+  end
 
   def job_parameters
     params.require(:job).permit(:title, :location, :category, :company_id, :description, :featured)
