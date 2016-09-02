@@ -1,12 +1,7 @@
-<% @jobs.each do |job| %>
-<dl>
-  <dt><h1><%= link_to job.title, job %></h1></dt>
-  <dt>Empresa:</dt>
-  <dd><%= job.company.name %></dd>
-  <dt>Localização:</dt>
-  <dd><%= job.location %></dd>
-  <% if job.featured? %>
-    <dd><strong> Vaga em Destaque </strong><dd>
-  <% end %>
-</dl>
+<h1>Vagas:</h1>
+<%= render partial: 'shared/jobs_list', locals:{ jobs: @jobs } %>
+
+<h1>Empresas:</h1>
+<% @companies.each do |company| %>
+<p><%= link_to company.name, company %></p>
 <% end %>

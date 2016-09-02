@@ -8,4 +8,7 @@
   <dd><%= @company.phone %><dd>
 </dl>
 
+<h1>Vagas:</h1>
+<%= render partial: 'shared/jobs_list', locals:{ jobs: @company.jobs } %>
+
 <%= link_to "Voltar", root_path %>
