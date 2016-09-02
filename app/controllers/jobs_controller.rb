@@ -1,12 +1,12 @@
 class JobsController < ApplicationController
+  before_action :set_job, only:[:show, :edit, :update]
+  before_action :get_companies, only:[:new, :edit]
 
   def show
-    set_job
   end
 
   def new
     @job = Job.new
-    get_companies
   end
 
   def create
@@ -21,12 +21,9 @@ class JobsController < ApplicationController
   end
 
   def edit
-    set_job
-    get_companies
   end
 
   def update
-    set_job
     if @job.update(job_parameters)
       redirect_to @job
     else
