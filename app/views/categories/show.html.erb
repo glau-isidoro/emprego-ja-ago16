@@ -1,0 +1,12 @@
+<h1><%= @category.name %></h1>
+
+<h1>Vagas:</h1>
+  <% if @category.jobs.empty? %>
+    <%= "Nenhuma vaga disponível" %>
+  <% else %>
+    <% @category.jobs.each do |job| %>
+      <%= render partial: 'jobs/job', locals:{ job: job } %>
+    <% end %>
+  <% end %>
+
+<%= link_to "Voltar", root_path %>
