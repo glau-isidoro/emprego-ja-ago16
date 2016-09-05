@@ -5,7 +5,7 @@
   <dt>Localização:</dt>
   <dd><%= job.location %></dd>
   <dt>Categoria:</dt>
-  <dd><%= job.category %></dd>
+  <dd><%= job.category.name %></dd>
   <% if job.featured? %>
     <dd><strong> Vaga em Destaque </strong><dd>
   <% end %>
