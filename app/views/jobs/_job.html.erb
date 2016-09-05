@@ -1,12 +1,12 @@
-<% jobs.each do |job| %>
 <dl>
   <dt><h1><%= link_to job.title, job %></h1></dt>
   <dt>Empresa:</dt>
   <dd><%= job.company.name %></dd>
   <dt>Localização:</dt>
   <dd><%= job.location %></dd>
+  <dt>Categoria:</dt>
+  <dd><%= job.category %></dd>
   <% if job.featured? %>
     <dd><strong> Vaga em Destaque </strong><dd>
   <% end %>
 </dl>
-<% end %>

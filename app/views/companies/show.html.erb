@@ -9,6 +9,12 @@
 </dl>
 
 <h1>Vagas:</h1>
-<%= render partial: 'shared/jobs_list', locals:{ jobs: @company.jobs } %>
+  <% if @company.jobs.empty? %>
+    <%= "Nenhuma vaga disponível" %>
+  <% else %>
+    <% @company.jobs.each do |job| %>
+      <%= render partial: 'jobs/job', locals:{ job: job } %>
+    <% end %>
+  <% end %>
 
 <%= link_to "Voltar", root_path %>
