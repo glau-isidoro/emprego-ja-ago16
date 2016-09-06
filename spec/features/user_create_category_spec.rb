@@ -18,7 +18,8 @@ feature 'User create category' do
 
     click_on 'Criar Categoria'
 
-    expect(page).to have_content 'Não foi possível criar a categoria'
+    expect(page).to have_content 'prohibited this category from being saved'
+    expect(page).to have_content "Name can't be blank"
   end
 
   scenario 'unique categories' do
@@ -30,7 +31,8 @@ feature 'User create category' do
 
     click_on 'Criar Categoria'
 
-    expect(page).to have_content 'Categoria já existente'
+    expect(page).to have_content 'prohibited this category from being saved'
+    expect(page).to have_content 'Name has already been taken'
   end
 
 end

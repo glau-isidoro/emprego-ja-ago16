@@ -13,7 +13,6 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to @category
     else
-      flash[:alert] = 'Não foi possível criar a categoria'
       render :new
     end
   end
