@@ -1,4 +1,7 @@
 <h1><%= @company.name %></h1>
+<% if @company.premium? %>
+  <%= image_tag('estrela.png', alt: 'Empresa premium!') %>
+<% end %> 
 <dl>
   <dt>Localização:</dt>
   <dd><%= @company.location %></dd>
