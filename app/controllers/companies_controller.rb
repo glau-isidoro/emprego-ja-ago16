@@ -10,8 +10,22 @@ class CompaniesController < ApplicationController
     redirect_to @company
   end
 
+  def edit
+    set_company
+  end
+
   def show
     set_company
+  end
+
+  def update
+    set_company
+    if @company.update(company_parameters)
+      redirect_to @company
+    else
+      flash[:alert] = 'Não foi possível atualizar a empresa'
+      render :edit
+    end
   end
 
   private
