@@ -2,18 +2,11 @@ require 'rails_helper'
 
 feature 'User edit jobs' do
   scenario 'successfully' do
-    company = Company.create(name: 'Campus Code',
-                             location: 'São Paulo',
-                             mail: 'contato@campus.com.br',
-                             phone: '2369-3476')
+    company = create(:company)
 
-    category = Category.create(name: 'Desenvolvedor')
+    category = create(:category)
 
-    job = Job.create(title: 'Vaga de Dev',
-                     category: category,
-                     company: company,
-                     description: 'Dev Junior Rails com ao menos um projeto',
-                     location: 'São Paulo')
+    job = create(:job, company:company, category:category)
 
     visit edit_job_path(job)
 

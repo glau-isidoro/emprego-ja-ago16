@@ -2,10 +2,7 @@ require 'rails_helper'
 
 feature 'User edit jobs' do
   scenario 'successfully' do
-    company = Company.create(name: 'Campus Code',
-                             location: 'São Paulo',
-                             mail: 'contato@campus.com.br',
-                             phone: '2369-3476')
+    company = create(:company)
 
     visit edit_company_path(company)
 
